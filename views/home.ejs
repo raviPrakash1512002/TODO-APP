@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo List</title>
+</head>
+
+<body>
+  <div class="main-box">
+    <div class="header-part">
+      <span>ToDo App</span>
+    </div>
+    <div class="form">
+      <form action="/" method="post">
+        <div class="task">
+          <label for="task">Task</label>
+          <input id="task" type="text" name="task" placeholder="Enter Task" required>
+        </div>
+        <div class="category">
+          <label for="category">Category:</label>
+          <select name="category" id="category">
+            <option value="Personal">Personal</option>
+            <option value="Collage">Collage</option>
+            <option value="Work">Work</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="date">
+          <label for="date">Date:</label>
+          <input type="date" value="2017-06-01" id="date" name="date">
+        </div>
+
+        <div class="btn">
+          <button type="submit">Add Task</button>
+        </div>
+
+
+
+      </form>
+
+
+
+
+    </div>
+
+
+
+
+
+  </div>
+  <div class="box">
+    <ul>
+         <% for(let i of Todo_list){%>
+           <li>
+               <p>
+                 <%= i.task %>
+               </p>
+               <p>
+                 <%= i.category %>
+               </p>
+               <p>
+                <%= i.date %>
+              </p>
+             <!-- <div class="delete">
+               <a href="/delete-contact/?id=<%= i._id %>">
+                 <i class="far fa-trash-alt"></i>
+                </a>
+             </div> -->
+           </li>  
+         
+         <%}%>
+    </ul>
+    
+    
+ </div>
+
+
+</body>
+
+</html>
